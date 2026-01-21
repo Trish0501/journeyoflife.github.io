@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dark Mode Website</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      animation: slideDown 1.2s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: #94a3b8;
+      max-width: 600px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(2,6,23,0.85);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      margin: 0;
+    }
+
+    nav a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: #818cf8;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      margin-bottom: 5rem;
+      animation: riseUp 1s ease both;
+    }
+
+    @keyframes riseUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    button {
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      color: #020617;
+      border: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(56,189,248,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>My Dark Mode Website</h1>
+    <p>
+      A sleek, animated website with modern dark aesthetics and smooth
+      interactions.
+    </p>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="card">
+        <h2>About Me</h2>
+        <p>
+          This site is designed to feel premium, smooth, and futuristic.
+          Replace this section with your own story or brand message.
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>What I Do</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Design</h3>
+          <p>Clean UI/UX with a focus on dark mode aesthetics.</p>
+        </div>
+        <div class="card">
+          <h3>Development</h3>
+          <p>Responsive, fast, and modern web development.</p>
+        </div>
+        <div class="card">
+          <h3>Performance</h3>
+          <p>Smooth animations without sacrificing speed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Project One</h3>
+          <p>Showcase a featured project or case study.</p>
+        </div>
+        <div class="card">
+          <h3>Project Two</h3>
+          <p>Highlight another impressive piece of work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Let’s build something amazing together.</p>
+        <button onclick="alert('Add your contact form or email here')">Contact Me</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 My Dark Website · Dark Mode UI
+  </footer>
+
+</body>
+</html>
